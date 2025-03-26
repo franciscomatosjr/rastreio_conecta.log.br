@@ -1,4 +1,4 @@
-# 📦 Rastreamento de Objetos com BeautifulSoup
+# 📦 Rastreamento de Objetos com BeautifulSoup no site 'https://conecta.log.br'
 
 Este projeto utiliza Python e BeautifulSoup para extrair informações de rastreamento de objetos a partir de um retorno HTML bruto. O objetivo é converter o conteúdo HTML em um dicionário estruturado para facilitar o processamento e visualização.
 
@@ -37,11 +37,12 @@ pip install beautifulsoup4
 2. Execute o script:
    ```bash
    python rastreamento.py
+   ```
   
 3. O retorno será um dicionário em formato JSON com os dados estruturados.
 
 💻 Exemplo de Código
-    ```bash
+```bash
     import requests
     from bs4 import BeautifulSoup
     import json
@@ -95,54 +96,58 @@ pip install beautifulsoup4
         print(json.dumps(resultado, indent=4, ensure_ascii=False))
       else:
           print(response.status_code)  
+```
 
 
 📝 Exemplo de Saída
-   ```bash
-   python rastreamento.py
-    {
-        "objeto": "OBJETO R05134A00063137BR",
-        "codigo": "AA007689234234",
-        "fornecedor": "ECONOPACK",
-        "destinatario": "FULANO DE TAL",
-        "endereco": "RUA ESTRADA MUITO ENGRAÇA, NÃO TINHA TETO, NÃO TINHA NADA",
-        "eventos": [
-            {
-                "status": "OBJETO CRIADO",
-                "location": "",
-                "timestamp": "24/03/2025 14:05"
-            },
-            {
-                "status": "TRANSFERIDO PARA CENTRO DE DISTRIBUIÇÃO",
-                "location": "",
-                "timestamp": "24/03/2025 15:02"
-            },
-            {
-                "status": "ENTRADA NO CENTRO DE DISTRIBUIÇÃO",
-                "location": "",
-                "timestamp": "24/03/2025 16:52"
-            },
-            {
-                "status": "OBJETO POSTADO APÓS O HORÁRIO LIMITE DA UNIDADE",
-                "location": "",
-                "timestamp": "24/03/2025 20:40"
-            },
-            {
-                "status": "OBJETO EM TRANSFERÊNCIA",
-                "location": "CAJAMAR - SP",
-                "timestamp": "25/03/2025 09:08"
-            },
-            {
-                "status": "OBJETO EM TRANSFERÊNCIA",
-                "location": "BELO HORIZONTE - MG",
-                "timestamp": "25/03/2025 13:35"
-            }
-        ]
-    }
+```bash
+      
+         {
+           "objeto": "OBJETO R05134A00063137BR",
+           "codigo": "AA0072345235334234",
+           "fornecedor": "ECONOPACK",
+           "destinatario": "FULANO DE TAL",
+           "endereco": "RUA ESTRADA MUITO ENGRAÇA, NÃO TINHA TETO, NÃO TINHA NADA",
+           "eventos": [
+               {
+                   "status": "OBJETO CRIADO",
+                   "location": "",
+                   "timestamp": "24/03/2025 14:05"
+               },
+               {
+                   "status": "TRANSFERIDO PARA CENTRO DE DISTRIBUIÇÃO",
+                   "location": "",
+                   "timestamp": "24/03/2025 15:02"
+               },
+               {
+                   "status": "ENTRADA NO CENTRO DE DISTRIBUIÇÃO",
+                   "location": "",
+                   "timestamp": "24/03/2025 16:52"
+               },
+               {
+                   "status": "OBJETO POSTADO APÓS O HORÁRIO LIMITE DA UNIDADE",
+                   "location": "",
+                   "timestamp": "24/03/2025 20:40"
+               },
+               {
+                   "status": "OBJETO EM TRANSFERÊNCIA",
+                   "location": "CAJAMAR - SP",
+                   "timestamp": "25/03/2025 09:08"
+               },
+               {
+                   "status": "OBJETO EM TRANSFERÊNCIA",
+                   "location": "BELO HORIZONTE - MG",
+                   "timestamp": "25/03/2025 13:35"
+               }
+           ]
+         }
+```
 🧪 Testes
 Para testar o script, basta executar:
-   ```bash
+```bash
    python rastreamento.py
+```
+    
 🚀 Funcionalidades
 - Extrai informações principais como:
   - Código do objeto
